@@ -1,0 +1,956 @@
+const coutryCurrencies = [
+  {
+    isoAlpha2: "AF",
+    currency: "AFN",
+  },
+  {
+    isoAlpha2: "AL",
+    currency: "ALL",
+  },
+  {
+    isoAlpha2: "DZ",
+    currency: "DZD",
+  },
+  {
+    isoAlpha2: "AS",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "AD",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "AO",
+    currency: "AOA",
+  },
+  {
+    isoAlpha2: "AI",
+    currency: "XCD",
+  },
+  {
+    isoAlpha2: "AG",
+    currency: "XCD",
+  },
+  {
+    isoAlpha2: "AR",
+    currency: "ARS",
+  },
+  {
+    isoAlpha2: "AM",
+    currency: "AMD",
+  },
+  {
+    isoAlpha2: "AW",
+    currency: "AWG",
+  },
+  {
+    isoAlpha2: "AU",
+    currency: "AUD",
+  },
+  {
+    isoAlpha2: "AT",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "AZ",
+    currency: "AZN",
+  },
+  {
+    isoAlpha2: "BS",
+    currency: "BSD",
+  },
+  {
+    isoAlpha2: "BH",
+    currency: "BHD",
+  },
+  {
+    isoAlpha2: "BD",
+    currency: "BDT",
+  },
+  {
+    isoAlpha2: "BB",
+    currency: "BBD",
+  },
+  {
+    isoAlpha2: "BY",
+    currency: "BYR",
+  },
+  {
+    isoAlpha2: "BE",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "BZ",
+    currency: "BZD",
+  },
+  {
+    isoAlpha2: "BJ",
+    currency: "XOF",
+  },
+  {
+    isoAlpha2: "BM",
+    currency: "BMD",
+  },
+  {
+    isoAlpha2: "BT",
+    currency: "BTN",
+  },
+  {
+    isoAlpha2: "BO",
+    currency: "BOB",
+  },
+  {
+    isoAlpha2: "BA",
+    currency: "BAM",
+  },
+  {
+    isoAlpha2: "BW",
+    currency: "BWP",
+  },
+  {
+    isoAlpha2: "BV",
+    currency: "NOK",
+  },
+  {
+    isoAlpha2: "BR",
+    currency: "BRL",
+  },
+  {
+    isoAlpha2: "IO",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "VG",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "BN",
+    currency: "BND",
+  },
+  {
+    isoAlpha2: "BG",
+    currency: "BGN",
+  },
+  {
+    isoAlpha2: "BF",
+    currency: "XOF",
+  },
+  {
+    isoAlpha2: "BI",
+    currency: "BIF",
+  },
+  {
+    isoAlpha2: "KH",
+    currency: "KHR",
+  },
+  {
+    isoAlpha2: "CM",
+    currency: "XAF",
+  },
+  {
+    isoAlpha2: "CA",
+    currency: "CAD",
+  },
+  {
+    isoAlpha2: "CV",
+    currency: "CVE",
+  },
+  {
+    isoAlpha2: "KY",
+    currency: "KYD",
+  },
+  {
+    isoAlpha2: "CF",
+    currency: "XAF",
+  },
+  {
+    isoAlpha2: "TD",
+    currency: "XAF",
+  },
+  {
+    isoAlpha2: "CL",
+    currency: "CLP",
+  },
+  {
+    isoAlpha2: "CN",
+    currency: "CNY",
+  },
+  {
+    isoAlpha2: "CX",
+    currency: "AUD",
+  },
+  {
+    isoAlpha2: "CC",
+    currency: "AUD",
+  },
+  {
+    isoAlpha2: "CO",
+    currency: "COP",
+  },
+  {
+    isoAlpha2: "KM",
+    currency: "KMF",
+  },
+  {
+    isoAlpha2: "CK",
+    currency: "NZD",
+  },
+  {
+    isoAlpha2: "CR",
+    currency: "CRC",
+  },
+  {
+    isoAlpha2: "HR",
+    currency: "HRK",
+  },
+  {
+    isoAlpha2: "CU",
+    currency: "CUP",
+  },
+  {
+    isoAlpha2: "CY",
+    currency: "CYP",
+  },
+  {
+    isoAlpha2: "CZ",
+    currency: "CZK",
+  },
+  {
+    isoAlpha2: "CD",
+    currency: "CDF",
+  },
+  {
+    isoAlpha2: "DK",
+    currency: "DKK",
+  },
+  {
+    isoAlpha2: "DJ",
+    currency: "DJF",
+  },
+  {
+    isoAlpha2: "DM",
+    currency: "XCD",
+  },
+  {
+    isoAlpha2: "DO",
+    currency: "DOP",
+  },
+  {
+    isoAlpha2: "TL",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "EC",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "EG",
+    currency: "EGP",
+  },
+  {
+    isoAlpha2: "SV",
+    currency: "SVC",
+  },
+  {
+    isoAlpha2: "GQ",
+    currency: "XAF",
+  },
+  {
+    isoAlpha2: "ER",
+    currency: "ERN",
+  },
+  {
+    isoAlpha2: "EE",
+    currency: "EEK",
+  },
+  {
+    isoAlpha2: "ET",
+    currency: "ETB",
+  },
+  {
+    isoAlpha2: "FK",
+    currency: "FKP",
+  },
+  {
+    isoAlpha2: "FO",
+    currency: "DKK",
+  },
+  {
+    isoAlpha2: "FJ",
+    currency: "FJD",
+  },
+  {
+    isoAlpha2: "FI",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "FR",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "GF",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "PF",
+    currency: "XPF",
+  },
+  {
+    isoAlpha2: "TF",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "GA",
+    currency: "XAF",
+  },
+  {
+    isoAlpha2: "GM",
+    currency: "GMD",
+  },
+  {
+    isoAlpha2: "GE",
+    currency: "GEL",
+  },
+  {
+    isoAlpha2: "DE",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "GH",
+    currency: "GHC",
+  },
+  {
+    isoAlpha2: "GI",
+    currency: "GIP",
+  },
+  {
+    isoAlpha2: "GR",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "GL",
+    currency: "DKK",
+  },
+  {
+    isoAlpha2: "GD",
+    currency: "XCD",
+  },
+  {
+    isoAlpha2: "GP",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "GU",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "GT",
+    currency: "GTQ",
+  },
+  {
+    isoAlpha2: "GN",
+    currency: "GNF",
+  },
+  {
+    isoAlpha2: "GW",
+    currency: "XOF",
+  },
+  {
+    isoAlpha2: "GY",
+    currency: "GYD",
+  },
+  {
+    isoAlpha2: "HT",
+    currency: "HTG",
+  },
+  {
+    isoAlpha2: "HM",
+    currency: "AUD",
+  },
+  {
+    isoAlpha2: "HN",
+    currency: "HNL",
+  },
+  {
+    isoAlpha2: "HK",
+    currency: "HKD",
+  },
+  {
+    isoAlpha2: "HU",
+    currency: "HUF",
+  },
+  {
+    isoAlpha2: "IS",
+    currency: "ISK",
+  },
+  {
+    isoAlpha2: "IN",
+    currency: "INR",
+  },
+  {
+    isoAlpha2: "ID",
+    currency: "IDR",
+  },
+  {
+    isoAlpha2: "IR",
+    currency: "IRR",
+  },
+  {
+    isoAlpha2: "IQ",
+    currency: "IQD",
+  },
+  {
+    isoAlpha2: "IE",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "IL",
+    currency: "ILS",
+  },
+  {
+    isoAlpha2: "IT",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "CI",
+    currency: "XOF",
+  },
+  {
+    isoAlpha2: "JM",
+    currency: "JMD",
+  },
+  {
+    isoAlpha2: "JP",
+    currency: "JPY",
+  },
+  {
+    isoAlpha2: "JO",
+    currency: "JOD",
+  },
+  {
+    isoAlpha2: "KZ",
+    currency: "KZT",
+  },
+  {
+    isoAlpha2: "KE",
+    currency: "KES",
+  },
+  {
+    isoAlpha2: "KI",
+    currency: "AUD",
+  },
+  {
+    isoAlpha2: "KW",
+    currency: "KWD",
+  },
+  {
+    isoAlpha2: "KG",
+    currency: "KGS",
+  },
+  {
+    isoAlpha2: "LA",
+    currency: "LAK",
+  },
+  {
+    isoAlpha2: "LV",
+    currency: "LVL",
+  },
+  {
+    isoAlpha2: "LB",
+    currency: "LBP",
+  },
+  {
+    isoAlpha2: "LS",
+    currency: "LSL",
+  },
+  {
+    isoAlpha2: "LR",
+    currency: "LRD",
+  },
+  {
+    isoAlpha2: "LY",
+    currency: "LYD",
+  },
+  {
+    isoAlpha2: "LI",
+    currency: "CHF",
+  },
+  {
+    isoAlpha2: "LT",
+    currency: "LTL",
+  },
+  {
+    isoAlpha2: "LU",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "MO",
+    currency: "MOP",
+  },
+  {
+    isoAlpha2: "MK",
+    currency: "MKD",
+  },
+  {
+    isoAlpha2: "MG",
+    currency: "MGA",
+  },
+  {
+    isoAlpha2: "MW",
+    currency: "MWK",
+  },
+  {
+    isoAlpha2: "MY",
+    currency: "MYR",
+  },
+  {
+    isoAlpha2: "MV",
+    currency: "MVR",
+  },
+  {
+    isoAlpha2: "ML",
+    currency: "XOF",
+  },
+  {
+    isoAlpha2: "MT",
+    currency: "MTL",
+  },
+  {
+    isoAlpha2: "MH",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "MQ",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "MR",
+    currency: "MRO",
+  },
+  {
+    isoAlpha2: "MU",
+    currency: "MUR",
+  },
+  {
+    isoAlpha2: "YT",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "MX",
+    currency: "MXN",
+  },
+  {
+    isoAlpha2: "FM",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "MD",
+    currency: "MDL",
+  },
+  {
+    isoAlpha2: "MC",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "MN",
+    currency: "MNT",
+  },
+  {
+    isoAlpha2: "MS",
+    currency: "XCD",
+  },
+  {
+    isoAlpha2: "MA",
+    currency: "MAD",
+  },
+  {
+    isoAlpha2: "MZ",
+    currency: "MZN",
+  },
+  {
+    isoAlpha2: "MM",
+    currency: "MMK",
+  },
+  {
+    isoAlpha2: "NA",
+    currency: "NAD",
+  },
+  {
+    isoAlpha2: "NR",
+    currency: "AUD",
+  },
+  {
+    isoAlpha2: "NP",
+    currency: "NPR",
+  },
+  {
+    isoAlpha2: "NL",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "AN",
+    currency: "ANG",
+  },
+  {
+    isoAlpha2: "NC",
+    currency: "XPF",
+  },
+  {
+    isoAlpha2: "NZ",
+    currency: "NZD",
+  },
+  {
+    isoAlpha2: "NI",
+    currency: "NIO",
+  },
+  {
+    isoAlpha2: "NE",
+    currency: "XOF",
+  },
+  {
+    isoAlpha2: "NG",
+    currency: "NGN",
+  },
+  {
+    isoAlpha2: "NU",
+    currency: "NZD",
+  },
+  {
+    isoAlpha2: "NF",
+    currency: "AUD",
+  },
+  {
+    isoAlpha2: "KP",
+    currency: "KPW",
+  },
+  {
+    isoAlpha2: "MP",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "NO",
+    currency: "NOK",
+  },
+  {
+    isoAlpha2: "OM",
+    currency: "OMR",
+  },
+  {
+    isoAlpha2: "PK",
+    currency: "PKR",
+  },
+  {
+    isoAlpha2: "PW",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "PS",
+    currency: "ILS",
+  },
+  {
+    isoAlpha2: "PA",
+    currency: "PAB",
+  },
+  {
+    isoAlpha2: "PG",
+    currency: "PGK",
+  },
+  {
+    isoAlpha2: "PY",
+    currency: "PYG",
+  },
+  {
+    isoAlpha2: "PE",
+    currency: "PEN",
+  },
+  {
+    isoAlpha2: "PH",
+    currency: "PHP",
+  },
+  {
+    isoAlpha2: "PN",
+    currency: "NZD",
+  },
+  {
+    isoAlpha2: "PL",
+    currency: "PLN",
+  },
+  {
+    isoAlpha2: "PT",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "PR",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "QA",
+    currency: "QAR",
+  },
+  {
+    isoAlpha2: "CG",
+    currency: "XAF",
+  },
+  {
+    isoAlpha2: "RE",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "RO",
+    currency: "RON",
+  },
+  {
+    isoAlpha2: "RU",
+    currency: "RUB",
+  },
+  {
+    isoAlpha2: "RW",
+    currency: "RWF",
+  },
+  {
+    isoAlpha2: "SH",
+    currency: "SHP",
+  },
+  {
+    isoAlpha2: "KN",
+    currency: "XCD",
+  },
+  {
+    isoAlpha2: "LC",
+    currency: "XCD",
+  },
+  {
+    isoAlpha2: "PM",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "VC",
+    currency: "XCD",
+  },
+  {
+    isoAlpha2: "WS",
+    currency: "WST",
+  },
+  {
+    isoAlpha2: "SM",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "ST",
+    currency: "STD",
+  },
+  {
+    isoAlpha2: "SA",
+    currency: "SAR",
+  },
+  {
+    isoAlpha2: "SN",
+    currency: "XOF",
+  },
+  {
+    isoAlpha2: "CS",
+    currency: "RSD",
+  },
+  {
+    isoAlpha2: "SC",
+    currency: "SCR",
+  },
+  {
+    isoAlpha2: "SL",
+    currency: "SLL",
+  },
+  {
+    isoAlpha2: "SG",
+    currency: "SGD",
+  },
+  {
+    isoAlpha2: "SK",
+    currency: "SKK",
+  },
+  {
+    isoAlpha2: "SI",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "SB",
+    currency: "SBD",
+  },
+  {
+    isoAlpha2: "SO",
+    currency: "SOS",
+  },
+  {
+    isoAlpha2: "ZA",
+    currency: "ZAR",
+  },
+  {
+    isoAlpha2: "GS",
+    currency: "GBP",
+  },
+  {
+    isoAlpha2: "KR",
+    currency: "KRW",
+  },
+  {
+    isoAlpha2: "ES",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "LK",
+    currency: "LKR",
+  },
+  {
+    isoAlpha2: "SD",
+    currency: "SDD",
+  },
+  {
+    isoAlpha2: "SR",
+    currency: "SRD",
+  },
+  {
+    isoAlpha2: "SJ",
+    currency: "NOK",
+  },
+  {
+    isoAlpha2: "SZ",
+    currency: "SZL",
+  },
+  {
+    isoAlpha2: "SE",
+    currency: "SEK",
+  },
+  {
+    isoAlpha2: "CH",
+    currency: "CHF",
+  },
+  {
+    isoAlpha2: "SY",
+    currency: "SYP",
+  },
+  {
+    isoAlpha2: "TW",
+    currency: "TWD",
+  },
+  {
+    isoAlpha2: "TJ",
+    currency: "TJS",
+  },
+  {
+    isoAlpha2: "TZ",
+    currency: "TZS",
+  },
+  {
+    isoAlpha2: "TH",
+    currency: "THB",
+  },
+  {
+    isoAlpha2: "TG",
+    currency: "XOF",
+  },
+  {
+    isoAlpha2: "TK",
+    currency: "NZD",
+  },
+  {
+    isoAlpha2: "TO",
+    currency: "TOP",
+  },
+  {
+    isoAlpha2: "TT",
+    currency: "TTD",
+  },
+  {
+    isoAlpha2: "TN",
+    currency: "TND",
+  },
+  {
+    isoAlpha2: "TR",
+    currency: "TRY",
+  },
+  {
+    isoAlpha2: "TM",
+    currency: "TMM",
+  },
+  {
+    isoAlpha2: "TC",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "TV",
+    currency: "AUD",
+  },
+  {
+    isoAlpha2: "VI",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "UG",
+    currency: "UGX",
+  },
+  {
+    isoAlpha2: "UA",
+    currency: "UAH",
+  },
+  {
+    isoAlpha2: "AE",
+    currency: "AED",
+  },
+  {
+    isoAlpha2: "GB",
+    currency: "GBP",
+  },
+  {
+    isoAlpha2: "US",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "UM",
+    currency: "USD",
+  },
+  {
+    isoAlpha2: "UY",
+    currency: "UYU",
+  },
+  {
+    isoAlpha2: "UZ",
+    currency: "UZS",
+  },
+  {
+    isoAlpha2: "VU",
+    currency: "VUV",
+  },
+  {
+    isoAlpha2: "VA",
+    currency: "EUR",
+  },
+  {
+    isoAlpha2: "VE",
+    currency: "VEF",
+  },
+  {
+    isoAlpha2: "VN",
+    currency: "VND",
+  },
+  {
+    isoAlpha2: "WF",
+    currency: "XPF",
+  },
+  {
+    isoAlpha2: "EH",
+    currency: "MAD",
+  },
+  {
+    isoAlpha2: "YE",
+    currency: "YER",
+  },
+  {
+    isoAlpha2: "ZM",
+    currency: "ZMK",
+  },
+  {
+    isoAlpha2: "ZW",
+    currency: "ZWD",
+  },
+]
+
+export default coutryCurrencies
