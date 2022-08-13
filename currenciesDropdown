@@ -1,0 +1,57 @@
+
+import coutryCurrencies from "./coutryCurrencies"
+
+const currencies = coutriesCurrencies
+
+const currenciesDropdown =() =>{
+  const [currency, setCurrency] = useState(currencies[0].currency)
+  const [country, setCountry] = useState(currencies[0].isoAlpha2)
+  
+  return(
+    <div className="flex items-center">
+              <Menu
+                as="div"
+                className="relative text-right w-fit h-full flex items-center bg-white py-2 pr-2 rounded-l-lg shadow-input duration-300"
+              >
+                <Menu.Button className="flex justify-end items-center h-full duration-300 ">
+                  <img
+                    src={`https://countryflagsapi.com/svg/${country}`}
+                    width={25}
+                    className="mr-2 ml-10"
+                  />
+                  <h1 className="flex items-center h-full">
+                    {currency}
+                    <ChevronDownIcon className=" h-5 w-5 " />
+                  </h1>
+                </Menu.Button>
+
+                <Menu.Items className="origin-top-right absolute right-0 -top-[25vh] h-[50vh] w-fit shadow-lg overflow-auto  bg-white self-start duration-300 ">
+                  {currencies.map((country: any, key: any) => (
+                    <Menu.Item key={key}>
+                      <button
+                        onClick={() => {
+                          setCountry(country.isoAlpha2)
+                          setCurrency(country.currency)
+                        }}
+                        className="flex items-center px-2 py-2 hover:bg-[#44444440] w-full  duration-300"
+                      >
+                        <img
+                          src={`https://countryflagsapi.com/png/${country.isoAlpha2}`}
+                          width={30}
+                          className="pr-2"
+                        />
+                        {country.currency}
+                      </button>
+                    </Menu.Item>
+                  ))}
+                </Menu.Items>
+              </Menu>
+              <input
+                className="w-full border-none outline-none hover:border-none hover:outline-none rounded-r-lg py-2 px-4 text-right shadow-input"
+                type="number"
+              />
+            </div>
+  )
+}
+
+export default currenciesDropdown
