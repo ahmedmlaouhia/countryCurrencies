@@ -11,9 +11,13 @@ const currenciesDropdown =() =>{
   
   return(
     <div className="flex items-center">
+              <input
+                className="w-full border-none outline-none hover:border-none hover:outline-none rounded-l-lg py-2 px-4 text-right shadow-input"
+                type="number"
+              />
               <Menu
                 as="div"
-                className="relative text-right w-fit h-full flex items-center bg-white py-2 pr-2 rounded-l-lg shadow-input duration-300"
+                className="relative text-right w-fit h-full flex items-center bg-white py-2 pr-2 rounded-r-lg shadow-input duration-300"
               >
                 <Menu.Button className="flex justify-end items-center h-full duration-300 ">
                   <img
@@ -48,10 +52,7 @@ const currenciesDropdown =() =>{
                   ))}
                 </Menu.Items>
               </Menu>
-              <input
-                className="w-full border-none outline-none hover:border-none hover:outline-none rounded-r-lg py-2 px-4 text-right shadow-input"
-                type="number"
-              />
+             
             </div>
   )
 }
